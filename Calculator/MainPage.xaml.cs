@@ -10,7 +10,6 @@ namespace Calculator
         Minus = 1,
         Mol = 2,
         Div = 3,
-        Equals = 10,
     }
 
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -106,17 +105,14 @@ namespace Calculator
 
         private void OnButton_Minus_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("-");
         }
 
         private void OnButton_Div_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("/");
         }
 
         private void OnButton_X_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("*");
         }
 
         private void OnButton_Equals_Clicked(object sender, EventArgs e)
@@ -128,22 +124,18 @@ namespace Calculator
 
         private void OnButton_PlusMinus_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("+/-");
         }
 
         private void OnButton_C_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("C");
         }
 
         private void OnButton_Percent_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException("%");
         }
 
         private void OnButton_Period_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException(".");
         }
 
         private void UpdateResult(string value)
