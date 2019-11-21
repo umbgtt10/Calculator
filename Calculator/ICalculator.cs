@@ -3,8 +3,15 @@
     public interface ICalculator
     {
         void AddOperator(Operator operation);
-        void AddOperand(double operand);
+
+        void AddOperand(string operand);
+
         double GetResult();
+
+        double FlipSign();
+        double DivideBy100();
+
+        void Reset();
     }
 }
 
