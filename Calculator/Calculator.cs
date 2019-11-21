@@ -139,14 +139,6 @@ namespace Calculator
             operation = null;
         }
 
-        private void ThrowIfNotNumber(string operand)
-        {
-            if(!double.TryParse(operand, out var _))
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
         private bool IsOperandUnset(string operand)
         {
             if (string.IsNullOrEmpty(operand))
@@ -166,5 +158,3 @@ namespace Calculator
         }
     }
 }
-
-
