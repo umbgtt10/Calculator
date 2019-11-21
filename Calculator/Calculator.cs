@@ -8,16 +8,15 @@ namespace Calculator
         private string operand2Txt;
         private Operator? operation;
 
-        public void AddOperand(string operand)
+        public void AddOperand(Number operand)
         {
-            ThrowIfNotNumber(operand);
             if (!operation.HasValue)
             {
-                operand1Txt += operand;
+                operand1Txt += (int)operand;
             }
             else
             {
-                operand2Txt += operand;
+                operand2Txt += (int)operand;
             }
         }
 

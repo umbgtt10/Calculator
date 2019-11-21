@@ -4,7 +4,7 @@
     {
         bool AddOperator(Operator operation);
 
-        void AddOperand(string operand);
+        void AddOperand(Number operand);
 
         bool AddComma();
 

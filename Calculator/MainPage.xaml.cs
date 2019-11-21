@@ -12,6 +12,20 @@ namespace Calculator
         Div = 3,
     }
 
+    public enum Number
+    {
+        Zero = 0,
+        One = 1,
+        Two = 2,
+        Three = 3,
+        Four = 4,
+        Five = 5,
+        Six = 6,
+        Seven = 7,
+        Eigth = 8,
+        Nine = 9,
+    }
+
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
@@ -28,61 +42,61 @@ namespace Calculator
 
         private void OnButton_1_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("1");
+            calculator.AddOperand(Number.One);
             UpdateResult("1");
         }
 
         private void OnButton_2_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("2");
+            calculator.AddOperand(Number.Two);
             UpdateResult("2");
         }
 
         private void OnButton_3_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("3");
+            calculator.AddOperand(Number.Three);
             UpdateResult("3");
         }
 
         private void OnButton_4_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("4");
+            calculator.AddOperand(Number.Four);
             UpdateResult("4");
         }
 
         private void OnButton_5_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("5");
+            calculator.AddOperand(Number.Five);
             UpdateResult("5");
         }
 
         private void OnButton_6_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("6");
+            calculator.AddOperand(Number.Six);
             UpdateResult("6");
         }
 
         private void OnButton_7_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("7");
+            calculator.AddOperand(Number.Seven);
             UpdateResult("7");
         }
 
         private void OnButton_8_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("8");
+            calculator.AddOperand(Number.Eigth);
             UpdateResult("8");
         }
 
         private void OnButton_9_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("9");
+            calculator.AddOperand(Number.Nine);
             UpdateResult("9");
         }
 
         private void OnButton_0_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperand("0");
+            calculator.AddOperand(Number.Zero);
             UpdateResult("0");
         }
 
