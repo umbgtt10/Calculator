@@ -8,9 +8,8 @@ namespace Calculator
     {
         Plus = 0,
         Minus = 1,
-        Mol = 2,
+        Multi = 2,
         Div = 3,
-        PlusMinus = 4,
     }
 
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -89,35 +88,48 @@ namespace Calculator
 
         private void OnButton_Plus_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperator(Operator.Plus);
-
-            UpdateResult("+");
+            if (calculator.AddOperator(Operator.Plus))
+            {
+                UpdateResult("+");
+            }
         }
 
         private void OnButton_Minus_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperator(Operator.Minus);
-
-            UpdateResult("-");
+            if(calculator.AddOperator(Operator.Minus))
+            {
+                UpdateResult("-");
+            }
         }
 
         private void OnButton_Div_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperator(Operator.Div);
-
-            UpdateResult("/");
+            if (calculator.AddOperator(Operator.Div))
+            {
+                UpdateResult("/");
+            }
         }
 
         private void OnButton_X_Clicked(object sender, EventArgs e)
         {
-            calculator.AddOperator(Operator.Mol);
-
-            UpdateResult("*");
+            if(calculator.AddOperator(Operator.Multi))
+            {
+                UpdateResult("*");
+            }
         }
 
         private void OnButton_Equals_Clicked(object sender, EventArgs e)
         {
-            var result = calculator.GetResult().ToString();
+            string result;
+
+            try
+            {
+                result = calculator.GetResult().ToString();
+            }
+            catch(InvalidOperationException)
+            {
+                result = "Divided by 0!!!";
+            }
 
             SetResult(result);
         }
@@ -145,6 +157,10 @@ namespace Calculator
 
         private void OnButton_Period_Clicked(object sender, EventArgs e)
         {
+            if(calculator.AddComma())
+            {
+                UpdateResult(",");
+            }
         }
 
         private void UpdateResult(string value)

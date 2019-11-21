@@ -21,22 +21,54 @@ namespace Calculator
             }
         }
 
-        public void AddOperator(Operator operation)
+        public bool AddComma()
         {
-            if(!this.operation.HasValue)
+            if (!operation.HasValue && !operand1Txt.Contains("."))
+            {
+                operand1Txt += ".";
+
+                return true;
+            }
+
+            else if (operation.HasValue && !operand2Txt.Contains("."))
+            {
+                operand2Txt += ".";
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool AddOperator(Operator operation)
+        {
+            if(!IsOperandUnset(operand1Txt) && (!this.operation.HasValue || this.operation.Value != operation))
             {
                 this.operation = operation;
+
+                return true;
             }
+
+            return false;
         }
 
         public double GetResult()
         {
             double result;
 
-            ThrowIfOperationAndOperandsNotConsistent();
+            if(IsOperandUnset(operand1Txt))
+            {
+                return 0;
+            }
 
-            var operand1 = double.Parse(operand1Txt);
-            var operand2 = double.Parse(operand2Txt);
+            var operand1 = double.Parse(operand1Txt, System.Globalization.CultureInfo.InvariantCulture);
+
+            if (IsOperandUnset(operand2Txt))
+            {
+                return operand1;
+            }
+
+            var operand2 = double.Parse(operand2Txt, System.Globalization.CultureInfo.InvariantCulture);
 
             switch (operation)
             {
@@ -50,7 +82,7 @@ namespace Calculator
                     SetCarryOver(result);
                     break;
 
-                case Operator.Mol:
+                case Operator.Multi:
                     result = operand1 * operand2;
                     SetCarryOver(result);
                     break;
@@ -77,8 +109,12 @@ namespace Calculator
 
         public double FlipSign()
         {
-            ThrowIfFirstOperandNotSet();
-            var result = double.Parse(operand1Txt) * (-1);
+            if (IsOperandUnset(operand1Txt))
+            {
+                return 0;
+            }
+
+            var result = double.Parse(operand1Txt, System.Globalization.CultureInfo.InvariantCulture) * (-1);
             operand1Txt = result.ToString();
             
             return result;
@@ -86,8 +122,12 @@ namespace Calculator
 
         public double DivideBy100()
         {
-            ThrowIfFirstOperandNotSet();
-            var result = double.Parse(operand1Txt) / 100;
+            if (IsOperandUnset(operand1Txt))
+            {
+                return 0;
+            }
+
+            var result = double.Parse(operand1Txt, System.Globalization.CultureInfo.InvariantCulture) / 100;
             operand1Txt = result.ToString();
 
             return result;
@@ -108,20 +148,14 @@ namespace Calculator
             }
         }
 
-        private void ThrowIfOperationAndOperandsNotConsistent()
+        private bool IsOperandUnset(string operand)
         {
-            if (string.IsNullOrEmpty(operand1Txt) || string.IsNullOrEmpty(operand2Txt) || !operation.HasValue)
+            if (string.IsNullOrEmpty(operand))
             {
-                throw new InvalidOperationException();
+                return true;
             }
-        }
 
-        private void ThrowIfFirstOperandNotSet()
-        {
-            if (string.IsNullOrEmpty(operand1Txt))
-            {
-                throw new InvalidOperationException();
-            }
+            return false;
         }
 
         private void ThrowIfSecondOperandIsZero()

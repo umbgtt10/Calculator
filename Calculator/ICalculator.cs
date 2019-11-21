@@ -2,13 +2,16 @@
 {
     public interface ICalculator
     {
-        void AddOperator(Operator operation);
+        bool AddOperator(Operator operation);
 
         void AddOperand(string operand);
+
+        bool AddComma();
 
         double GetResult();
 
         double FlipSign();
+
         double DivideBy100();
 
         void Reset();
