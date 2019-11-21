@@ -13,7 +13,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void NoOperandsSet_GetResult_ReturnsZero()
+        public void GetResult_NoOperandsSet_ReturnsZero()
         {
             // Arange
             var expectedResult = 0;
@@ -26,7 +26,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenAddOperator_NoSecondOperandSet_ThenGetResult_ReturnsFurstOpernad()
+        public void GetResult_AddSingleOperand_ThenAddOperator_NoSecondOperandSet_ReturnsFurstOperand()
         {
             // Arange
             var operand1 = "5";
@@ -43,7 +43,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenAddOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperand_ThenAddOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -62,7 +62,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenAddOperator_ThenChangeOperator_ThenAddSecondOperator_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_ThenAddOperator_ThenChangeOperator_ThenAddSecondOperator_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -83,7 +83,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenMinusOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperand_ThenMinusOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -102,7 +102,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenMultiplicationOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperand_ThenMultiplicationOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -121,7 +121,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenDivisionOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperand_ThenDivisionOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "50";
@@ -140,7 +140,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperand_ThenFlipSign_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperand_ThenFlipSign_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "50";
@@ -155,7 +155,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddMultipleOperands_ThenDivideBy100_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddMultipleOperands_ThenDivideBy100_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "50000";
@@ -170,7 +170,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddMultipleOperands_ThenPlusOperator_ThenAddMultipleOperands_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddMultipleOperands_ThenPlusOperator_ThenAddMultipleOperands_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "3";
@@ -192,7 +192,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddMultipleOperands_ThenMinusOperator_ThenAddMultipleOperands_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddMultipleOperands_ThenMinusOperator_ThenAddMultipleOperands_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "3";
@@ -214,7 +214,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddMultipleOperands_ThenMultiplicationOperator_ThenAddMultipleOperands_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddMultipleOperands_ThenMultiplicationOperator_ThenAddMultipleOperands_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "2";
@@ -236,7 +236,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddMultipleOperands_ThenDivisionOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddMultipleOperands_ThenDivisionOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -257,7 +257,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperandWithComma_ThenPlusOperator_ThenAddSingleOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperandWithComma_ThenPlusOperator_ThenAddSingleOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -278,7 +278,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperandWithComma_ThenPlusOperator_ThenAddSingleOperandWithComma_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperandWithComma_ThenPlusOperator_ThenAddSingleOperandWithComma_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -301,7 +301,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperandWithComma_ThenPlusOperator_ThenNoSecondOperand_ThenGetResult_ReturnsCorrectResult()
+        public void GetResult_AddSingleOperandWithComma_ThenPlusOperator_ThenNoSecondOperand_ReturnsCorrectResult()
         {
             // Arange
             var operand1 = "5";
@@ -320,7 +320,7 @@ namespace Calculator
         }
 
         [TestMethod]
-        public void AddSingleOperandWithComma_ThenGetResult_ReturnsFirstOperatorResult()
+        public void GetResult_AddSingleOperandWithComma_ReturnsFirstOperatorResult()
         {
             // Arange
             var operand1 = "5";
