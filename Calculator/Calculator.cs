@@ -60,14 +60,14 @@ namespace Calculator
                 return 0;
             }
 
-            var operand1 = double.Parse(operand1Txt, System.Globalization.CultureInfo.InvariantCulture);
+            var operand1 = double.Parse(operand1Txt);
 
             if (IsOperandUnset(operand2Txt))
             {
                 return operand1;
             }
 
-            var operand2 = double.Parse(operand2Txt, System.Globalization.CultureInfo.InvariantCulture);
+            var operand2 = double.Parse(operand2Txt);
 
             switch (operation)
             {
