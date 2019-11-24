@@ -1,15 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Calculator
 {
     [TestClass]
     public class CalculatorTests
     {
-        private Calculator testee;
+        private ICalculator testee;
 
         public CalculatorTests()
         {
-            this.testee = new Calculator();
+            this.testee = new Calc();
         }
 
         [TestMethod]
@@ -337,6 +338,27 @@ namespace Calculator
 
             // Assert
             Assert.AreEqual(expectedResult, resut);
+        }
+
+        [TestMethod]
+        public void GetResult_AddOpernadWithComma_AddMultiOperand_AddOperandWithComma_ReturnsExpectedResultApproximately()
+        {
+            // Arrange
+            var expectedResult = 10.89;
+
+            this.testee.AddOperand(Number.Three);
+            this.testee.AddComma();
+            this.testee.AddOperand(Number.Three);
+            this.testee.AddOperator(Operator.Multi);
+            this.testee.AddOperand(Number.Three);
+            this.testee.AddComma();
+            this.testee.AddOperand(Number.Three);
+
+            // Act
+            var result = this.testee.GetResult();
+
+            // Assert
+            Assert.IsTrue(Math.Abs(expectedResult - result) < 0.001);
         }
     }
 }

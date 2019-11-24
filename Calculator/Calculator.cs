@@ -2,7 +2,7 @@
 
 namespace Calculator
 {
-    public class Calculator : ICalculator
+    public class Calc : ICalculator
     {
         private string operand1Txt;
         private string operand2Txt;
@@ -60,14 +60,14 @@ namespace Calculator
                 return 0;
             }
 
-            var operand1 = double.Parse(operand1Txt);
+            var operand1 = double.Parse(operand1Txt, System.Globalization.CultureInfo.InvariantCulture);
 
             if (IsOperandUnset(operand2Txt))
             {
                 return operand1;
             }
 
-            var operand2 = double.Parse(operand2Txt);
+            var operand2 = double.Parse(operand2Txt, System.Globalization.CultureInfo.InvariantCulture);
 
             switch (operation)
             {
