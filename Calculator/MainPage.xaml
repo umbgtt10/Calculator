@@ -21,155 +21,192 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <Label x:Name="Result" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
-                    BackgroundColor="DarkGray"
-                    TextColor="Black"
-                    HorizontalTextAlignment="End"
-                    VerticalTextAlignment="Center"
-                    FontSize="65">
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                   BackgroundColor="DarkGray"
+                   TextColor="Black"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center"
+                   FontSize="65"
+                   Text="{Binding Result}">
             </Label>
 
-            <Button x:Name="ButtonC" Grid.Row="1" Grid.Column="0"
+            <Button Grid.Row="1" Grid.Column="0"
                     BackgroundColor="Gray"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"
                     Text="C"
-                    Clicked="OnButton_C_Clicked">
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="C">
             </Button>
 
-            <Button x:Name="ButtonPlusMinus" Grid.Row="1" Grid.Column="1"
+            <Button Grid.Row="1" Grid.Column="1"
                     BackgroundColor="Gray"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
                     Text="+/-"
-                    Clicked="OnButton_PlusMinus_Clicked">
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="+-">
             </Button>
 
-            <Button x:Name="ButtonPercent" Grid.Row="1" Grid.Column="2"
+            <Button Grid.Row="1" Grid.Column="2"
                     BackgroundColor="Gray"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
-                    Text="%" Clicked="OnButton_Percent_Clicked">
+                    Text="%" 
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="%">
             </Button>
 
-           <Button x:Name="ButtonDiv" Grid.Row="1" Grid.Column="3"
-                    BackgroundColor="Orange"
-                    TextColor="White"
-                    BorderColor="Black"
-                    FontSize="35"                    
-                    Text="DIV" Clicked="OnButton_Div_Clicked">
+           <Button Grid.Row="1" Grid.Column="3"
+                   BackgroundColor="Orange"
+                   TextColor="White"
+                   BorderColor="Black"
+                   FontSize="35"                    
+                   Text="DIV"
+                   Command="{Binding AddElementCommand}"
+                   CommandParameter="/">
             </Button>
 
-            <Button x:Name="Button1" Grid.Row="2" Grid.Column="0"
+            <Button Grid.Row="2" Grid.Column="0"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"   
                     FontSize="35"                    
-                    Text="1" Clicked="OnButton_1_Clicked">
+                    Text="1"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="1">
             </Button>
-            <Button x:Name="Button2" Grid.Row="2" Grid.Column="1"
+            <Button Grid.Row="2" Grid.Column="1"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"    
                     FontSize="35"                    
-                    Text="2" Clicked="OnButton_2_Clicked">
+                    Text="2"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="2">
             </Button>
-            <Button x:Name="Button3" Grid.Row="2" Grid.Column="2"
+            <Button Grid.Row="2" Grid.Column="2"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"     
                     FontSize="35"                    
-                    Text="3" Clicked="OnButton_3_Clicked">
+                    Text="3"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="3">
             </Button>
-            <Button x:Name="ButtonX" Grid.Row="2" Grid.Column="3"
+            <Button Grid.Row="2" Grid.Column="3"
                     BackgroundColor="Orange"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
-                    Text="X" Clicked="OnButton_X_Clicked">
+                    Text="X"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="X">
             </Button>
 
-            <Button x:Name="Button4" Grid.Row="3" Grid.Column="0"
+            <Button Grid.Row="3" Grid.Column="0"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"    
                     FontSize="35"                    
-                    Text="4" Clicked="OnButton_4_Clicked">
+                    Text="4"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="4">
             </Button>
-            <Button x:Name="Button5" Grid.Row="3" Grid.Column="1"
+            <Button Grid.Row="3" Grid.Column="1"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"      
                     FontSize="35"                    
-                    Text="5" Clicked="OnButton_5_Clicked">
+                    Text="5"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="5">
             </Button>
-            <Button x:Name="Button6" Grid.Row="3" Grid.Column="2"
+            <Button Grid.Row="3" Grid.Column="2"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"   
                     FontSize="35"                    
-                    Text="6" Clicked="OnButton_6_Clicked">
+                    Text="6"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="6">
             </Button>
-            <Button x:Name="ButtonMinus" Grid.Row="3" Grid.Column="3"
+            <Button Grid.Row="3" Grid.Column="3"
                     BackgroundColor="Orange"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
-                    Text="-" Clicked="OnButton_Minus_Clicked">
+                    Text="-"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="-">
             </Button>
 
-            <Button x:Name="Button7" Grid.Row="4" Grid.Column="0"
+            <Button Grid.Row="4" Grid.Column="0"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"   
                     FontSize="35"                    
-                    Text="7" Clicked="OnButton_7_Clicked">
+                    Text="7"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="7">
             </Button>
-            <Button x:Name="Button8" Grid.Row="4" Grid.Column="1"
+            <Button Grid.Row="4" Grid.Column="1"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"  
                     FontSize="35"                    
-                    Text="8" Clicked="OnButton_8_Clicked">
+                    Text="8"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="8">
             </Button>
-            <Button x:Name="Button9" Grid.Row="4" Grid.Column="2"
+            <Button Grid.Row="4" Grid.Column="2"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"     
                     FontSize="35"                    
-                    Text="9" Clicked="OnButton_9_Clicked">
+                    Text="9"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="9">
             </Button>
-            <Button x:Name="ButtonPlus" Grid.Row="4" Grid.Column="3"
+            <Button Grid.Row="4" Grid.Column="3"
                     BackgroundColor="Orange"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
-                    Text="+" Clicked="OnButton_Plus_Clicked">
+                    Text="+"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="+">
             </Button>
 
-            <Button x:Name="Button0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"    
                     FontSize="35"                    
-                    Text="0" Clicked="OnButton_0_Clicked">
+                    Text="0"
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="0">
             </Button>
-            <Button x:Name="ButtonPeriod" Grid.Row="5" Grid.Column="2" 
+            <Button Grid.Row="5" Grid.Column="2" 
                     BackgroundColor="White"
                     TextColor="Black"
                     BorderColor="Black"        
                     FontSize="35"                    
-                    Text="." Clicked="OnButton_Period_Clicked">
+                    Text="."
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter=".">
             </Button>
-            <Button x:Name="ButtonEquals" Grid.Row="5" Grid.Column="3"
+            <Button Grid.Row="5" Grid.Column="3"
                     BackgroundColor="Orange"
                     TextColor="White"
                     BorderColor="Black"
                     FontSize="35"                    
-                    Text="=" Clicked="OnButton_Equals_Clicked">
+                    Text="="
+                    Command="{Binding AddElementCommand}"
+                    CommandParameter="=">
             </Button>
         </Grid>
 </ContentPage>
